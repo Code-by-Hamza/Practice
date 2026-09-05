@@ -19,6 +19,10 @@ function save() {
 
 }
 
-function total() {
-
+function reset() {
+    count = 0
+    subTotal = 0
+    totalEl.textContent = "SubTotal: 0"
+    saveEl.textContent = "Previous entries: "
+    countEl.textContent = 0
 }
