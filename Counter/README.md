@@ -1,14 +1,17 @@
-# Getting Started
-Install the dependencies and run the project
-```
-npm install
-npm start
-```
+# Sheep Counter
 
-## About Project
+A simple JavaScript counter project.
 
-A simple counter App
+## Features
 
-# Learning Javascript
+- Increment the counter
+- Save entries
+- Track previous entries
+- Calculate the subtotal
+- Reset all data
 
-Happy Coding!
+## Technologies
+
+- HTML
+- CSS
+- JavaScript
