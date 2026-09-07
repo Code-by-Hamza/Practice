@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "digital";
+    src: url(fonts/digital-7.ttf) format("truetype");
+}
+
+
+body {
+    margin: 0;
+    background: #1E0453;
+    max-width: 550px;
+}
+
+#heading {
+    padding: 0%;
+    font-weight: 400;
+    font-family: "honk";
+    font-size: 53px;
+    height: 140px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.display {
+    font-size: 120px;
+    font-family: "digital";
+    width: 130px;
+    height: 100px;
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    margin: 0px;
+    border-radius: 10px;
+    color: rgb(255, 0, 149);
+
+}
+
+.buttons {
+    background: none;
+    border: 1px solid white;
+    border-radius: 6px;
+    color: white;
+    margin: 15px 5px;
+    padding: 13px;
+}
