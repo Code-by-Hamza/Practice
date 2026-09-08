@@ -1,36 +1,23 @@
 let homeScore = document.getElementById("home-score")
 let guestScore = document.getElementById("guest-score")
+const buttonsA = document.querySelectorAll(".buttons-a")
+buttonsA.forEach(button => button.disabled = true)
 let homeResult = 0
 let guestResult = 0
 
-function homeone() {
-    homeResult++
-    homeScore.textContent = homeResult
-}
-function hometwo() {
-    homeResult += 2
-    homeScore.textContent = homeResult
-}
-function homethree() {
-    homeResult += 3
-    homeScore.textContent = homeResult
-}
 
-function guestone() {
-    guestResult++
-    guestScore.textContent = guestResult
-}
-function guesttwo() {
-    guestResult += 2
-    guestScore.textContent = guestResult
-}
-function guestthree() {
-    guestResult += 3
-    guestScore.textContent = guestResult
+function addScore(team, points) {
+    if (team === "home") {
+        homeResult += points
+        homeScore.textContent = homeResult
+    } else {
+        guestResult += points
+        guestScore.textContent = guestResult
+    }
 }
 
 //newGame
-function reset() {
+function newGame() {
     homeResult = 0
     guestResult = 0
     homeScore.textContent = homeResult
@@ -45,7 +32,6 @@ let isRunning = false;
 
 const display = document.getElementById("timer")
 const startBtn = document.getElementById("start-btn")
-const buttonsA = document.querySelectorAll(".buttons-a")
 
 function updateDisplay() {
     let minutes = Math.floor(timeRemaining / 60)
@@ -58,6 +44,8 @@ function updateDisplay() {
 }
 
 function startTimer() {
+    homeScore.textContent = 0
+    guestScore.textContent = 0
     if (isRunning) return;
     isRunning = true;
     startBtn.disabled = true;
