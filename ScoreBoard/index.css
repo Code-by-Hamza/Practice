@@ -26,7 +26,7 @@ body {
 .display {
     font-size: 120px;
     font-family: "digital";
-    width: 130px;
+    width: 150px;
     height: 100px;
     background-color: black;
     text-align: center;
@@ -43,5 +43,9 @@ body {
     border-radius: 6px;
     color: white;
     margin: 15px 5px;
-    padding: 13px;
+    padding: 5px 10px;
+    padding-bottom: 12px;
+    font-family: "digital";
+    font-size: 25px;
+
 }
