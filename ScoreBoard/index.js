@@ -28,3 +28,11 @@ function guestthree() {
     guestResult += 3
     guestScore.textContent = guestResult
 }
+
+//newGame
+function reset() {
+    homeResult = 0
+    guestResult = 0
+    homeScore.textContent = homeResult
+    guestScore.textContent = guestResult
+}
