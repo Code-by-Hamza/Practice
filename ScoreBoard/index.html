@@ -8,7 +8,16 @@
 </head>
 
 <body>
-    <div id="heading" class="container">
+    <div class="container-two">
+        <div>
+            <h3 class="heading">Timer</h3>
+
+        </div>
+        <div>
+            <h1 id="timer">30 : 00</h1>
+        </div>
+    </div>
+    <div class="container">
         <div>
             <h3>HOME</h3>
         </div>
@@ -29,19 +38,20 @@
         </div>
     </div>
     <div class="container">
-        <div >
-            <button class="buttons" onclick="homeone()" >+1</button>
-            <button class="buttons" onclick="hometwo()">+2</button>
-            <button class="buttons" onclick="homethree()">+3</button>
+        <div>
+            <button class="buttons-a" onclick="homeone()">+1</button>
+            <button class="buttons-a" onclick="hometwo()">+2</button>
+            <button class="buttons-a" onclick="homethree()">+3</button>
         </div>
         <div>
-            <button class="buttons" onclick="guestone()">+1</button>
-            <button class="buttons" onclick="guesttwo()">+2</button>
-            <button class="buttons" onclick="guestthree()">+3</button>
+            <button class="buttons-a" onclick="guestone()">+1</button>
+            <button class="buttons-a" onclick="guesttwo()">+2</button>
+            <button class="buttons-a" onclick="guestthree()">+3</button>
         </div>
     </div>
-    <div class="container">
-        <button id="new-game" class="buttons" onclick="reset()">New Game</button>
+    <div class="container-two">
+        <button id="start-btn" class="buttons-b" onclick="startTimer()">Start Game</button>
+        <button id="new-game" class="buttons-b" onclick="reset()">New Game</button>
     </div>
     <script src="index.js"></script>
 </body>

@@ -8,19 +8,26 @@ body {
     margin: 0;
     background: #1E0453;
     max-width: 550px;
+    text-align: center;
 }
 
-#heading {
-    padding: 0%;
+h3 {
+    margin: 0px;
     font-weight: 400;
     font-family: "honk";
     font-size: 53px;
-    height: 140px;
 }
 
 .container {
     display: flex;
     justify-content: space-around;
+}
+
+.container-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .display {
@@ -29,7 +36,6 @@ body {
     width: 150px;
     height: 100px;
     background-color: black;
-    text-align: center;
     padding: 20px;
     margin: 0px;
     border-radius: 10px;
@@ -37,7 +43,31 @@ body {
 
 }
 
-.buttons {
+#timer {
+    width: 300px;
+    height: 100px;
+    background-color: black;
+    margin: 0px;
+    border-radius: 10px;
+    color: rgb(255, 0, 149);
+    font-size: 110px;
+    padding: 13px 10px 0px 10px;
+    font-family: "digital";
+
+}
+
+#timer.time-up {
+    font-size: 80px;
+    padding: 0px;
+    padding-top: 25px;
+
+}
+
+#new-game {
+    margin: 0px;
+}
+
+.buttons-a {
     background: none;
     border: 1px solid white;
     border-radius: 6px;
@@ -48,4 +78,14 @@ body {
     font-family: "digital";
     font-size: 25px;
 
+}
+.buttons-b {
+    background: black;
+    border: 1px solid white;
+    border-radius: 6px;
+    color: white;
+    margin: 15px 5px;
+    padding: 5px 10px;
+    font-family: "honk";
+    font-size: 30px;
 }
