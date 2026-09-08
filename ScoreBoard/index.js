@@ -10,7 +10,7 @@ function addScore(team, points) {
     if (team === "home") {
         homeResult += points
         homeScore.textContent = homeResult
-    } else {
+    } else if (team === 'guest') {
         guestResult += points
         guestScore.textContent = guestResult
     }
@@ -44,8 +44,10 @@ function updateDisplay() {
 }
 
 function startTimer() {
-    homeScore.textContent = 0
-    guestScore.textContent = 0
+    homeResult = 0
+    guestResult = 0
+    homeScore.textContent = homeResult
+    guestScore.textContent = guestResult
     if (isRunning) return;
     isRunning = true;
     startBtn.disabled = true;
@@ -58,6 +60,7 @@ function startTimer() {
             display.textContent = "Time's Up!"
             display.classList.add("time-up")
             isRunning = false
+            buttonsA.forEach(button => button.disabled = true)
         } else {
             timeRemaining--
             updateDisplay()
