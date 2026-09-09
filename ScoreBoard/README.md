@@ -1,17 +1,21 @@
 # Score Board
 
-A simple JavaScript Score Board project.
+A simple basketball score board built with **HTML, CSS, and JavaScript**.
 
 ## Features
 
-- Track score for two teams
-- Includes a timer
-- Has a New Game feature
+* Keep track of the Home and Guest scores
+* Add 1, 2, or 3 points to each team
+* Simple and clean interface
 
-## Technologies
+## Screenshot
 
-- HTML
-- CSS
-- JavaScript
+![Score Board Screenshot](./screenshot.png)
 
-![Project Screenshot](screenshot.png)
+## Built With
+
+* HTML
+* CSS
+* JavaScript
+
+This is a practice project created while learning JavaScript.
