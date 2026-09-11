@@ -15,3 +15,7 @@ A simple JavaScript counter project.
 - HTML
 - CSS
 - JavaScript
+
+## Screenshot
+
+![Counter Screenshot](./images/screenshot.png)
