@@ -1,5 +1,14 @@
-const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?",
+const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+const symbols = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?",
     "/"];
+
+const numbers = [
+    "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
+]
+//include symbols
+const toggleSymbols = document.querySelector("#symbols")
+const togglenumbers = document.querySelector("#numbers")
 
 document.getElementById("generate").addEventListener("click", password);
 const box1El = document.getElementById("box1")
@@ -7,11 +16,19 @@ const box2El = document.getElementById("box2")
 
 //generate password
 function password() {
+    let pool = [...characters]
+    if (toggleSymbols.checked) {
+        pool.push(...symbols);
+    }
+    if (togglenumbers.checked) {
+        pool.push(...numbers);
+    }
+
     for (let i = 0; i < 17; i++) {
-        box1El.textContent += characters[Math.floor(Math.random() * characters.length)]
+        box1El.textContent += pool[Math.floor(Math.random() * pool.length)]
     }
     for (i = 0; i < 17; i++) {
-        box2El.textContent += characters[Math.floor(Math.random() * characters.length)]
+        box2El.textContent += pool[Math.floor(Math.random() * pool.length)]
     }
     document.getElementById("generate").disabled = true
 }
@@ -21,7 +38,7 @@ const copySpans = document.querySelectorAll(".box")
 copySpans.forEach(span => {
     span.addEventListener("click", () => {
         const original = span.textContent
-        navigator.clipboard.writeText(span.textContent).then( ()=> {
+        navigator.clipboard.writeText(span.textContent).then(() => {
             span.textContent = "copied"
         });
         setTimeout(() => {
@@ -32,7 +49,7 @@ copySpans.forEach(span => {
 });
 
 //Reload
-document.getElementById("icon").addEventListener("click", ()=> {
+document.getElementById("icon").addEventListener("click", () => {
     document.getElementById("generate").disabled = false
     box1El.textContent = "";
     box2El.textContent = "";
