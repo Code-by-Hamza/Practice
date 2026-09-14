@@ -8,29 +8,32 @@ const numbers = [
 ]
 //include symbols
 const toggleSymbols = document.querySelector("#symbols")
-const togglenumbers = document.querySelector("#numbers")
+const toggleNumbers = document.querySelector("#numbers")
 
 document.getElementById("generate").addEventListener("click", password);
 const box1El = document.getElementById("box1")
 const box2El = document.getElementById("box2")
 
 //generate password
+
 function password() {
     let pool = [...characters]
     if (toggleSymbols.checked) {
         pool.push(...symbols);
     }
-    if (togglenumbers.checked) {
+    if (toggleNumbers.checked) {
         pool.push(...numbers);
     }
 
-    for (let i = 0; i < 17; i++) {
+    box1El.textContent = ""
+    box2El.textContent = ""
+    for (let i = 0; i < 16; i++) {
         box1El.textContent += pool[Math.floor(Math.random() * pool.length)]
     }
-    for (i = 0; i < 17; i++) {
+    for (let i = 0; i < 16; i++) {
+        
         box2El.textContent += pool[Math.floor(Math.random() * pool.length)]
     }
-    document.getElementById("generate").disabled = true
 }
 
 //click to copy
@@ -50,7 +53,6 @@ copySpans.forEach(span => {
 
 //Reload
 document.getElementById("icon").addEventListener("click", () => {
-    document.getElementById("generate").disabled = false
     box1El.textContent = "";
     box2El.textContent = "";
 });
