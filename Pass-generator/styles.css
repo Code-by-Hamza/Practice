@@ -1,7 +1,7 @@
-
 html {
     min-width: 550px;
 }
+
 body {
     margin-left: 50px;
     margin-top: 115px;
@@ -12,6 +12,7 @@ body {
     display: flex;
     justify-content: center;
 }
+
 #main-body {
     width: 450px;
 }
@@ -25,8 +26,9 @@ body {
 .options {
     font-weight: bold;
     line-height: 34px;
-    
+
 }
+
 h1 {
     margin: 0;
 }
@@ -43,12 +45,14 @@ p {
 #heading {
     font-family: "karla";
 }
+
 .btn-container {
     display: flex;
     justify-content: left;
     gap: 10px;
     margin-top: 50px;
 }
+
 .btn {
     background-color: #4ADF86;
     padding: 0px 10px;
@@ -58,9 +62,11 @@ p {
     font-weight: bold;
     cursor: pointer;
 }
+
 #icon {
     padding: 7px 8px;
 }
+
 .btn-icon {
     width: 20px;
     height: 20px;
@@ -87,24 +93,26 @@ p {
     border-radius: 10px;
     text-align: center;
     color: #4ADF86;
-    cursor:pointer;
+    cursor: pointer;
 
 }
 
 
 
-
+/* toggle buttons */
 .switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 30px;
 }
+
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
+
 .slider {
     position: absolute;
     cursor: pointer;
@@ -112,10 +120,11 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #273549;
     -webkit-transition: .4s;
     transition: .4s
 }
+
 .slider:before {
     position: absolute;
     content: "";
@@ -127,20 +136,87 @@ p {
     -webkit-transition: .4s;
     transition: .4s;
 }
-input:checked + .slider {
+
+input:checked+.slider {
     background-color: #4ADF86;
 }
-input:focus + .slider {
+
+input:focus+.slider {
     box-shadow: 0 0 1px #4ADF86;
 }
-input:checked + .slider:before {
+
+input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
 }
+
 .slider.round {
     border-radius: 34px;
 }
+
 .slider.round:before {
     border-radius: 50%;
+}
+
+/* password length */
+.slider-container {
+    width: 160px;
+}
+
+#length-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    appearance: none;
+    background: #273549;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 10px;
+}
+
+#length-slider:hover {
+    opacity: 1;
+}
+
+#length-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 15px;
+    background: #4ADF86;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#length-slider::-moz-range-thumb {
+    width: 25px;
+    height: 15px;
+    background: #4ADF86;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 14px;
+}
+
+/* slider labels positions*/
+#label-4 {
+    padding-left: 10px;
+}
+#label-8 {
+    padding-left: 12px;
+}
+#label-12 {
+    padding-left: 12px;
+}
+#label-16 {
+    padding-right: 3px;
+    padding-left: 10px;
+
 }
