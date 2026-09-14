@@ -11,11 +11,12 @@ const toggleSymbols = document.querySelector("#symbols")
 const toggleNumbers = document.querySelector("#numbers")
 
 document.getElementById("generate").addEventListener("click", password);
-const box1El = document.getElementById("box1")
-const box2El = document.getElementById("box2")
+const passwordOneEl = document.getElementById("box1")
+const passwordTwoEl = document.getElementById("box2")
 
 //generate password
-
+const lengthSlider = document.querySelector("#length-slider")
+const passwordLength = [8,12,16]
 function password() {
     let pool = [...characters]
     if (toggleSymbols.checked) {
@@ -25,15 +26,19 @@ function password() {
         pool.push(...numbers);
     }
 
-    box1El.textContent = ""
-    box2El.textContent = ""
-    for (let i = 0; i < 16; i++) {
-        box1El.textContent += pool[Math.floor(Math.random() * pool.length)]
+    passwordOneEl
+.textContent = ""
+    passwordTwoEl.textContent = ""
+    const length = passwordLength[lengthSlider.value - 1]
+    for (let i = 0; i < length; i++) {
+        passwordOneEl
+    .textContent += pool[Math.floor(Math.random() * pool.length)]
     }
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < length; i++) {
         
-        box2El.textContent += pool[Math.floor(Math.random() * pool.length)]
+        passwordTwoEl.textContent += pool[Math.floor(Math.random() * pool.length)]
     }
+    document.getElementById("generate").disabled = true
 }
 
 //click to copy
@@ -53,6 +58,8 @@ copySpans.forEach(span => {
 
 //Reload
 document.getElementById("icon").addEventListener("click", () => {
-    box1El.textContent = "";
-    box2El.textContent = "";
+    passwordOneEl
+.textContent = "";
+    passwordTwoEl.textContent = "";
+    document.getElementById("generate").disabled = false
 });
