@@ -2,8 +2,11 @@ body {
     margin: 0;
     width: 550px;
     height: 730px;
-    background: #121113;
-    color: white;
+    background: #18181B;
+    color: #FFFFFF;
+    border: 5px solid #BE123C;
+    border-radius: 5px;
+    font-family: "Outfit", sans-serif;
 }
 
 .container {
@@ -17,12 +20,11 @@ body {
 /* upper part #222725*/
 #upper-part {
     height: 285px;
-    background-color: #9E4770;
+    background-color: #BE123C;
 }
 
 #heading {
-    font-weight: 800;
-    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
     font-size: 25px;
     margin-top: 33px;
 }
@@ -33,25 +35,28 @@ body {
     width: 115px;
     height: 80px;
     background: none;
-    border: 2px solid #848FA5;
+    border: 3px solid #18181B;
     border-radius: 5px;
+}
+
+#input-box:hover {
+    background-color: #880e2c;
 }
 
 input {
 
     font-weight: 800;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Outfit", sans-serif;
     width: 85px;
     height: 70px;
     margin: 5px 16px;
+    padding-left: 7px;
     background: none;
     border: none;
     font-size: 60px;
-    color: white;
+    color: #FAFAFA;
     outline: none;
     caret-color: transparent;
-    -moz-appearance: textfield;
-    appearance: none;
 }
 
 input::-webkit-outer-spin-button,
@@ -62,12 +67,40 @@ input::-webkit-inner-spin-button {
 
 button {
     color: white;
-    background-color: #848FA5;
+    background-color: #18181B;
     width: 117px;
     height: 42px;
     border-radius: 5px;
-    border: 1px solid #848FA5;
     font-size: 20px;
-    font-weight: 800;
-    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-family: "Outfit", sans-serif;
+}
+
+button:hover {
+    background-color: #3F3F46;
+}
+
+/* lower part */
+#lower-part.container {
+    margin-top: 13px;
+}
+
+.rectangle {
+    text-align: center;
+
+    width: 500px;
+    height: 109px;
+    background: #27272A;
+    margin-top: 23px;
+    border-radius: 5px;
+}
+
+h3 {
+    padding-top: 7px;
+    color: #FB7185;
+    font-weight: 700;
+}
+
+.result {
+    color: #D4D4D8
 }
