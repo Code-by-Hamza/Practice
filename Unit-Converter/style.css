@@ -27,6 +27,7 @@ body {
     font-weight: 700;
     font-size: 25px;
     margin-top: 33px;
+    text-shadow: 3px 3px black;
 }
 
 #input-box {
@@ -40,7 +41,7 @@ body {
 }
 
 #input-box:hover {
-    background-color: #880e2c;
+    background-color: #b3002d;
 }
 
 input {
@@ -74,6 +75,8 @@ button {
     font-size: 20px;
     font-weight: 600;
     font-family: "Outfit", sans-serif;
+    cursor: pointer;
+    border: none;
 }
 
 button:hover {
@@ -99,6 +102,7 @@ h3 {
     padding-top: 7px;
     color: #FB7185;
     font-weight: 700;
+    cursor: default;
 }
 
 .result {
