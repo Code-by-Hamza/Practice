@@ -11,7 +11,7 @@ const btnEl = document.getElementById("convert-btn")
 
 
 //limit input to 2 digits
-numberInput.addEventListener('input-el', function () {
+numberInput.addEventListener("input", function () {
     if (this.value.length > 2) {
         this.value = this.value.slice(0, 2);
     }
