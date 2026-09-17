@@ -19,7 +19,7 @@ numberInput.addEventListener("input", function () {
 
 btnEl.addEventListener("click", () => {
     const inputValue = numberInput.valueAsNumber
-    if (!inputValue) {
+    if (Number.isNaN(inputValue)) {
         inputValue = 0
         lengthEl.textContent = 0
         volumeEl.textContent = 0
