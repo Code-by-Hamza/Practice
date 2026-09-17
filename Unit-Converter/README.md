@@ -2,6 +2,10 @@
 
 A simple metric/imperial unit converter built with HTML, CSS, and JavaScript.
 
+## Screenshot
+
+![Score Board Screenshot](./screenshot.png)
+
 ## Features
 
 - Convert length between meters and feet
@@ -23,17 +27,6 @@ A simple metric/imperial unit converter built with HTML, CSS, and JavaScript.
 - JavaScript functions
 - Number input handling
 - Basic unit conversion calculations
-
-## Project Structure
-
-```text
-Unit-Converter/
-├── index.html
-├── style.css
-├── main.js
-├── screenshot.png
-└── README.md
-```
 
 ## Author
 
