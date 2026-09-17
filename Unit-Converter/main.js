@@ -19,25 +19,29 @@ numberInput.addEventListener("input", function () {
 
 btnEl.addEventListener("click", () => {
     const inputValue = numberInput.valueAsNumber
-    lengthEl.textContent = lengthF(inputValue)
-    volumeEl.textContent = volumeF(inputValue)
-    massEl.textContent = massF(inputValue)
-    console.log(inputValue)
-
+    if (!inputValue) {
+        inputValue = 0
+        lengthEl.textContent = 0
+        volumeEl.textContent = 0
+        massEl.textContent = 0
+    }
+    lengthEl.textContent = convertLength(inputValue)
+    volumeEl.textContent = convertVolume(inputValue)
+    massEl.textContent = convertMass(inputValue)
 })
 
 //convertion functions
-function lengthF(input) {
+function convertLength(input) {
     let feet = input * 3.281
     let meters = input / 3.281
     return `${input} meters = ${feet.toFixed(3)} | ${input} feet = ${meters.toFixed(3)} meters`
 }
-function volumeF(input) {
+function convertVolume(input) {
     let gallons = input * 0.264
     let liters = input / 0.264
     return `${input} gallons = ${liters.toFixed(3)} liters | ${input} liters = ${gallons.toFixed(3)} gallons`
 }
-function massF(input) {
+function convertMass(input) {
     let pounds = input * 2.204
     let kilos = input / 2.204
     return `${input} kilos = ${pounds.toFixed(3)} pounds | ${input} pounds = ${kilos.toFixed(3)} kilos`
