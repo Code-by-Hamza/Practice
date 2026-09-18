@@ -1,7 +1,13 @@
 body {
-    margin: 0 auto;
+    margin: 0px auto;
 }
-
+#popup-location {
+    height: 100dvh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
 #popup {
     width: 155px;
     height: 200px;
