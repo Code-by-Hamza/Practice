@@ -1,0 +1,38 @@
+body {
+    margin: 0 auto;
+}
+
+#popup {
+    width: 155px;
+    height: 200px;
+    padding: 15px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+#desc {
+    color: white;
+    margin-top: 35px;
+    margin-bottom: 0;
+    font-family: "Knewave", system-ui;
+    font-size: 17px;
+}
+
+#icon {
+    width: 30px;
+    height: 30px;
+}
+
+#accept-btn {
+    padding: 5px 0;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-family: "Knewave", system-ui;
+    font-size: 15px;
+
+
+
+}
