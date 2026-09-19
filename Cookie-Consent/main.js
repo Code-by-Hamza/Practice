@@ -1,6 +1,12 @@
+//manually clear locall storage first 
+ //localStorage.clear()
+
+
+
 const cookiePopup = document.getElementById("popup")
 const acceptBtn = document.getElementById("accept-btn")
 const checkCookies = localStorage.getItem("cookies")
+const closeBtn = document.getElementById("close-btn")
 
 if(checkCookies === "true") {
     cookiePopup.style.display = "none"
@@ -14,4 +20,9 @@ acceptBtn.addEventListener("click", ()=> {
     localStorage.setItem("cookies", true)
 })
 
-// localStorage.clear()
+closeBtn.addEventListener("click", ()=>{
+    cookiePopup.style.display = "none";
+})
+
+
+
