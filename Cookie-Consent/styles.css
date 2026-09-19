@@ -17,6 +17,18 @@ body {
     justify-content: center;
     flex-direction: column;
     border-radius: 15px;
+    position: relative;
+}
+
+#close-btn {
+    position: absolute;
+    color: white;
+    top: 8px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+
+
 }
 
 #desc {
@@ -25,6 +37,7 @@ body {
     margin-bottom: 0;
     font-family: "Knewave", system-ui;
     font-size: 17px;
+    cursor: default;
 }
 
 #icon {
