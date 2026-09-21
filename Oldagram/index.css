@@ -66,10 +66,28 @@ section {
 .post {
     width: 100%;
 }
+/* Icons */
 
-.icon {
+.icon, .heart-icon{
     width: 26px;
     height: 26px;
     margin-top: 13px;
     margin-right: 20px;
+}
+
+.icon:hover {
+    opacity: 0.5;
+}
+
+.heart-icon {
+  border: none;
+  background-image: url('images/icon-heart.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.like-btn.heart-icon.liked {
+    background-image: url("images/icon-heart-red.png");
 }
