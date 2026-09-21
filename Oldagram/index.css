@@ -15,8 +15,8 @@ header {
     border-bottom: 1px solid #c6c6c6;
 }
 section {
-    /* border: 2px solid black; */
     height: 545px;
+    margin-bottom: 10px;
 }
 
 /* typography */
@@ -29,21 +29,22 @@ section {
 .container, .container-two {
     display: flex;
     justify-content: left;
-    margin: 10px;
 }
 .container {
+    margin: 10px;
     align-items: center;
 }
 
 .container-two {
     flex-direction: column;
+    margin: 0 10px;
 }
 
 .container .avatar{
     margin-right: 7px;
 }
 .likes {
-    margin-top: 13px;
+    margin-top: 5px;
 }
 
 
