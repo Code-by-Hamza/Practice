@@ -1,20 +1,54 @@
 
 
 const likeBtns = document.querySelectorAll(".like-btn");
+const postContainers = document.querySelectorAll(".img-container")
+const likesContainers = document.querySelectorAll(".likes-container")
+let liked = false
 
+// like icon color
 likeBtns.forEach(likeBtn => {
     likeBtn.addEventListener("click", () => {
-        likeBtn.classList.toggle("liked");
+        const section = likeBtn.closest("section");
+        const likes = section.querySelector(".likes");
+        if (!liked) {
+            // Increment the likes
+            let currentLikes = parseInt(likes.textContent) || 0;
+            likes.textContent = (currentLikes + 1) + " Likes";
+            liked = true
+            section.querySelector(".like-btn").classList.toggle("liked")
+
+        } else {
+            // Decrement the likes
+            currentLikes = parseInt(likes.textContent) || 0;
+            likes.textContent = (currentLikes - 1) + " Likes";
+            liked = false
+            section.querySelector(".like-btn").classList.toggle("liked")
+        }
     });
 });
 
-const postContainers = document.querySelectorAll(".img-container")
 
+//posts heart effect
 postContainers.forEach(container => {
     container.addEventListener("dblclick", () => {
         const overlayHeart = container.querySelector(".overlay-heart")
+        const section = container.closest("section");
+        const likes = section.querySelector(".likes");
+        if (!liked) {
+            // Increment the likes
+            let currentLikes = parseInt(likes.textContent) || 0;
+            likes.textContent = (currentLikes + 1) + " Likes";
+            liked = true
+            section.querySelector(".like-btn").classList.toggle("liked")
 
-        if (!overlayHeart) return;
+        } else {
+            // Decrement the likes
+            currentLikes = parseInt(likes.textContent) || 0;
+            likes.textContent = (currentLikes - 1) + " Likes";
+            liked = false
+            section.querySelector(".like-btn").classList.toggle("liked")
+        }
+
 
         overlayHeart.classList.remove("is-hiding", "is-visible");
 
@@ -32,3 +66,23 @@ postContainers.forEach(container => {
         }, 700);
     })
 })
+
+// increase likes 
+function increaseLikes() {
+    likesContainers.forEach(container => {
+
+        const likes = container.querySelector(".likes")
+
+        let currentLikes = parseInt(likes.textContent) || 0;
+        likes.textContent = currentLikes + 1;
+        likes.textContent += " Likes"
+        console.log(likes)
+    })
+}
+
+
+
+//const text = "(32 Likes)";
+//const count = parseInt(text.match(/\d+/)[0], 10);
+
+//console.log(count); // Output: 32
