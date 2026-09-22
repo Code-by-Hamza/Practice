@@ -103,14 +103,12 @@ function toggleLike(section) {
         // Increment the likes
         let currentLikes = parseInt(likes.textContent) || 0;
         likes.textContent = (currentLikes + 1) + " Likes";
-        liked = true
         section.querySelector(".like-btn").classList.toggle("liked")
 
     } else {
         // Decrement the likes
         currentLikes = parseInt(likes.textContent) || 0;
         likes.textContent = (currentLikes - 1) + " Likes";
-        liked = false
         section.querySelector(".like-btn").classList.toggle("liked")
     }
 }
