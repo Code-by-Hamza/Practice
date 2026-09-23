@@ -31,19 +31,4 @@ consentForm.addEventListener('submit', function (e) {
             <img src="images/pirate.gif">
         </div>`
     }, 3000);
-    /*   
-    Challenge: 
-    1. Make it so that 1.5 seconds after seeing the 
-       "Making the sale..." message, the modal is 
-       cleared of its content and the following 
-       string of HTML is displayed instead.
-       
-       `<h2>Thanks you sucker! </h2>
-        <p>We just sold the rights to your eternal soul.</p>
-        <div class="idiot-gif">
-            <img src="images/pirate.gif">
-        </div>
-        ` 
-    */
-
 }) 
