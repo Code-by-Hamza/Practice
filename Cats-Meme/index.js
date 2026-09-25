@@ -1,4 +1,4 @@
-import { catsData } from '.data.js'
+import { catsData } from './data.js'
 
 const emotionRadios = document.getElementById('emotion-radios')
 const getImageBtn = document.getElementById('get-image-btn')
@@ -13,21 +13,30 @@ memeModalCloseBtn.addEventListener('click', closeModal)
 
 getImageBtn.addEventListener('click', renderCat)
 
-function highlightCheckedOption(e){
+
+function highlightCheckedOption(e) {
     const radios = document.getElementsByClassName('radio')
-    for (let radio of radios){
+    for (let radio of radios) {
         radio.classList.remove('highlight')
     }
     document.getElementById(e.target.id).parentElement.classList.add('highlight')
 }
 
-function closeModal(){
+function closeModal() {
     memeModal.style.display = 'none'
 }
 
-function renderCat(){
+function closeModalOnClick(e) {
+    if (e.target.closest('#meme-modal')) {
+        return
+    }
+    closeModal()
+    document.removeEventListener("click", closeModalOnClick);
+}
+
+function renderCat(e) {
     const catObject = getSingleCatObject()
-    memeModalInner.innerHTML =  `
+    memeModalInner.innerHTML = `
         <img 
         class="cat-img" 
         src="./images/${catObject.image}"
@@ -35,43 +44,47 @@ function renderCat(){
         >
         `
     memeModal.style.display = 'flex'
-}
 
-function getSingleCatObject(){
+    setTimeout(() => {
+        document.addEventListener("click", closeModalOnClick);
+    }, 0);
+};
+
+function getSingleCatObject() {
     const catsArray = getMatchingCatsArray()
-    
-    if(catsArray.length === 1){
+
+    if (catsArray.length === 1) {
         return catsArray[0]
     }
-    else{
+    else {
         const randomNumber = Math.floor(Math.random() * catsArray.length)
         return catsArray[randomNumber]
     }
 }
 
-function getMatchingCatsArray(){     
-    if(document.querySelector('input[type="radio"]:checked')){
+function getMatchingCatsArray() {
+    if (document.querySelector('input[type="radio"]:checked')) {
         const selectedEmotion = document.querySelector('input[type="radio"]:checked').value
         const isGif = gifsOnlyOption.checked
-        
-        const matchingCatsArray = catsData.filter(function(cat){
-            
-            if(isGif){
+
+        const matchingCatsArray = catsData.filter(function (cat) {
+
+            if (isGif) {
                 return cat.emotionTags.includes(selectedEmotion) && cat.isGif
             }
-            else{
+            else {
                 return cat.emotionTags.includes(selectedEmotion)
-            }            
+            }
         })
-        return matchingCatsArray 
-    }  
+        return matchingCatsArray
+    }
 }
 
-function getEmotionsArray(cats){
-    const emotionsArray = []    
-    for (let cat of cats){
-        for (let emotion of cat.emotionTags){
-            if (!emotionsArray.includes(emotion)){
+function getEmotionsArray(cats) {
+    const emotionsArray = []
+    for (let cat of cats) {
+        for (let emotion of cat.emotionTags) {
+            if (!emotionsArray.includes(emotion)) {
                 emotionsArray.push(emotion)
             }
         }
@@ -79,11 +92,11 @@ function getEmotionsArray(cats){
     return emotionsArray
 }
 
-function renderEmotionsRadios(cats){
-        
+function renderEmotionsRadios(cats) {
+
     let radioItems = ``
     const emotions = getEmotionsArray(cats)
-    for (let emotion of emotions){
+    for (let emotion of emotions) {
         radioItems += `
         <div class="radio">
             <label for="${emotion}">${emotion}</label>
@@ -99,6 +112,10 @@ function renderEmotionsRadios(cats){
 }
 
 renderEmotionsRadios(catsData)
+
+
+
+
 
 
 

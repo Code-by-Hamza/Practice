@@ -1,16 +1,18 @@
 html, body {
     margin: 0;
     font-family: 'Karla', sans-serif;
+    background-color: #0f084b;
+    color: black;
 }
 
 /*typography*/
 
 h1, h2, h3{
     text-align: center;
+    color: #c2e7d9;
 }
 
 h1, h2{
-    color: #EED6D3;
     margin: 0;
 }
 
@@ -29,7 +31,7 @@ h3{
 /* layout */
 
 header{
-    background-color: #67595E;
+    background-color: #0d0221;
 }
 
 .header-inner{
@@ -64,8 +66,9 @@ header{
 .radio{
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #bcbcbc;
+    border-bottom: 1px solid black;
     padding: 4px 8px;
+    background-color: #c2e7d9;
 }
 
 .radio:first-child{
@@ -87,10 +90,10 @@ label{
 }
 
 .highlight{
-    background-color: #fff0ee;
-    color: #bd301d;
+    background-color: #a6cfd5;
+    color: #26408b;
     font-weight: bold;
-    accent-color: #bd301d;
+    accent-color: #26408b;
 }
 
 input[type="radio"]{
@@ -107,11 +110,12 @@ input[type="radio"]{
 .gifs-check-label{
     width: unset;
     margin-right: 5px;
+    color: #c2e7d9;
 }
 
 .get-image-btn{
-    background-color: #67595e;
-    color: #eed6d3;
+    background-color: #0d0221;
+    color: #a6cfd5;
     padding: 15px 19px;
     font-size: 24px;
     border: none;
@@ -130,11 +134,11 @@ input[type="radio"]{
     right: 0;
     align-items: center;
     justify-content: center;
-    border: 1px solid #67595e;
+    border: 1px solid #0d0221;
     border-radius: 5px;
     width: 420px;
     height: 490px;
-    background-color: #fff0ee;
+    background-color: #a6cfd5;
 }
 
 .cat-img{
@@ -148,8 +152,8 @@ input[type="radio"]{
     top: 2%;
     right: 2%;
     background-color: transparent;
-    border: 2px solid #555;
-    color: #555;
+    border: 2px solid #0d0221;
+    color: #0d0221;
     border-radius: 50%;
     padding: 2px 6px;
     font-size: 14px;
