@@ -21,12 +21,8 @@ function handleLikeClick(tweetId) {
         return tweet.uuid === tweetId
     })[0]
 
-    if (targetTweetObj.isLiked) {
-        targetTweetObj.likes--
-    }
-    else {
-        targetTweetObj.likes++
-    }
+    targetTweetObj.isLiked ? targetTweetObj.likes-- : targetTweetObj.likes++
+
     targetTweetObj.isLiked = !targetTweetObj.isLiked
     render()
 }
@@ -36,12 +32,8 @@ function handleRetweetClick(tweetId) {
         return tweet.uuid === tweetId
     })[0]
 
-    if (targetTweetObj.isRetweeted) {
-        targetTweetObj.retweets--
-    }
-    else {
-        targetTweetObj.retweets++
-    }
+    targetTweetObj.isRetweeted ? targetTweetObj.retweets-- : targetTweetObj.retweets++
+
     targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
     render()
 }
@@ -76,17 +68,9 @@ function getFeedHtml() {
 
     tweetsData.forEach(function (tweet) {
 
-        let likeIconClass = ''
+        const likeIconClass = tweet.isLiked ? 'liked' : ''
 
-        if (tweet.isLiked) {
-            likeIconClass = 'liked'
-        }
-
-        let retweetIconClass = ''
-
-        if (tweet.isRetweeted) {
-            retweetIconClass = 'retweeted'
-        }
+        const retweetIconClass = tweet.isRetweeted ? 'retweeted' : ''
 
         let repliesHtml = ''
 
