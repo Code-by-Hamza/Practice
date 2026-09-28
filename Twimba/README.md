@@ -2,18 +2,15 @@
 
 A small Twitter-style feed built with HTML, CSS and JavaScript.
 
+## Screenshot
+![Twimba Screenshot](images/screenshot.png)
+
 ## Features
 
 - Create new tweets
 - Like and retweet tweets
 - Show and hide replies
 - Render tweets from JavaScript data
-
-## Built With
-
-- HTML
-- CSS
-- JavaScript
 
 ## What I Practiced
 
