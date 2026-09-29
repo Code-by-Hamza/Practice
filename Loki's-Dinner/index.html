@@ -1,27 +1,38 @@
 <html>
-
-<head>
+  <head>
     <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cause:wght@100..900&family=Knewave&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cause:wght@100..900&family=Knewave&display=swap"
+      rel="stylesheet"
+    />
     <!-- css -->
-    <link rel="stylesheet" href="index.css">
-</head>
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <img src="images/header.png">
-        <h2>Loki's Dinner</h2>
-        <p>The best burgers and pizzas in town.</p>
+      <img src="images/header.png" />
+      <h2>Loki's Dinner</h2>
+      <p>The best burgers and pizzas in town.</p>
     </header>
     <div class="menu-cards" id="menu-cards"></div>
-
-    <div class="cart-items"></div>
-
+    <div class="cart-items-container">
+      <h2>Your Order</h2>
+      <div class="cart-items">
+        <div class="container">
+          <h3>pizza</h3>
+          <h3>55$</h3>
+        </div>
+      </div>
+      <div class="total-price container">
+        <h3>Total Price:</h3>
+        <h3>55$</h3>
+      </div>
+      <button class="order-btn">Complete Order</button>
+    </div>
 
     <script src="index.js" type="module"></script>
-</body>
-
+  </body>
 </html>
