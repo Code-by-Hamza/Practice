@@ -6,32 +6,31 @@ document.addEventListener("click", (e) => {
   }
 });
 
-const calculateTotal = priceUpdate()
-
+const cartArr = [];
 function handleAddBtnClick(cardId) {
-  const targetCardObj = menuArr.filter(function(obj) {
-    return obj.id === Number(cardId)
-  })[0]
+  const targetCardObj = menuArr.filter((obj) => obj.id === Number(cardId))[0];
 
-  const currentTotal = calculateTotal(targetCardObj.price)
+  cartArr.push(targetCardObj);
 
-  document.getElementById('total-price').textContent = `${currentTotal}$`
-  
-  document.getElementById('cart-items').innerHTML += `
-    <div class="container" id="single-item">
-      <h3>${targetCardObj.name}</h3>
-      <h3>${targetCardObj.price}$</h3>
-    </div>
-  `
+  renderCart();
 }
 
-function priceUpdate() {
-    let totalPrice = 0
-    
-    return function(price) {
-        totalPrice += price
-        return totalPrice;
-    }
+function renderCart() {
+  const cartItemsContainer = document.getElementById("cart-items");
+  const totalPriceEl = document.getElementById("total-price");
+  cartItemsContainer.innerHTML = "";
+  let totalPrice = 0;
+  cartArr.forEach((item) => {
+    totalPrice += item.price;
+    cartItemsContainer.innerHTML += `
+      <div class="container" id="single-item">
+        <h3>${item.name}</h3>
+        <h3>${item.price}$</h3>
+      </div>
+    `;
+  });
+
+  totalPriceEl.textContent = `${totalPrice}$`;
 }
 
 function getCardsHtml(menucards) {
@@ -49,7 +48,6 @@ function getCardsHtml(menucards) {
         </div>
     </section>`;
   });
-  //  // cardHtml += `<div class="cart-items"></div>`
   return cardHtml;
 }
 
