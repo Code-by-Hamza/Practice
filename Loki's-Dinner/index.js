@@ -6,15 +6,32 @@ document.addEventListener("click", (e) => {
   }
 });
 
+const calculateTotal = priceUpdate()
+
 function handleAddBtnClick(cardId) {
   const targetCardObj = menuArr.filter(function(obj) {
-    return obj.id === Number(cardId);
+    return obj.id === Number(cardId)
   })[0]
-  return document.getElementById('cart-items').innerHTML += `<div class="container" id="single-item">
-          <h3>${targetCardObj.name}</h3>
-          <h3>${targetCardObj.price}$</h3>
-        </div>
-    `
+
+  const currentTotal = calculateTotal(targetCardObj.price)
+
+  document.getElementById('total-price').textContent = `${currentTotal}$`
+  
+  document.getElementById('cart-items').innerHTML += `
+    <div class="container" id="single-item">
+      <h3>${targetCardObj.name}</h3>
+      <h3>${targetCardObj.price}$</h3>
+    </div>
+  `
+}
+
+function priceUpdate() {
+    let totalPrice = 0
+    
+    return function(price) {
+        totalPrice += price
+        return totalPrice;
+    }
 }
 
 function getCardsHtml(menucards) {
