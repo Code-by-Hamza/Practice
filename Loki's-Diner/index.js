@@ -21,7 +21,6 @@ paymentForm.addEventListener("submit", function (e) {
 
     const getFormData = new FormData(paymentForm);
     const userName = getFormData.get("name");
-    console.log(userName);
     document.getElementById("msg-box").classList.remove("hidden");
     document.getElementById("msg-name").textContent = userName;
     document.getElementById("checkout-container").classList.add("hidden");
@@ -61,17 +60,17 @@ function renderCart() {
         : (document.querySelector(".cart-items-container").style.display =
               "none");
 
-    let cartHtml = ''
+    let cartHtml = "";
     let totalPrice = 0;
     cartArr.forEach((item) => {
         totalPrice += item.price;
         cartHtml += `
-      <div class="container" id="single-item">
+      <div class="container">
         <h3>${item.name}<button class="remove-btn" data-remove="${item.id}">Remove</button></h3>
         <h3>${item.price}$</h3>
       </div>
     `;
-    cartItemsContainer.innerHTML = cartHtml
+        cartItemsContainer.innerHTML = cartHtml;
     });
 
     totalPriceEl.textContent = `${totalPrice}$`;

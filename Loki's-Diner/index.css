@@ -69,14 +69,9 @@ header img {
     user-select: none;
 }
 
-.card-recipe,
-.card-name {
-    margin: 0;
-}
-
 .card-price {
+    margin-top: 5px;
     font-weight: 900;
-    margin: 5px 0 0 0;
 }
 
 /* cart */
@@ -144,7 +139,6 @@ form {
     margin-top: 60px;
     gap: 25px;
     align-items: center;
-    justify-content: center;
 }
 
 .input {
@@ -192,6 +186,8 @@ input[type="number"] {
     border-radius: 50%;
     border: 2px solid #8b8b8b;
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: auto;
     margin-right: 10px;
     cursor: pointer;
