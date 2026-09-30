@@ -147,10 +147,7 @@ header img {
   margin: 10px 20px;
 }
 
-/* Utility */
-.orange-text {
-  color: #ff6a00;
-}
+
 .remove-btn {
   background: transparent;
   font-weight: 600;
@@ -161,9 +158,11 @@ header img {
 .remove-btn:focus {
   color: #e63900;
 }
+
+
+
 /* checkOut */
 .checkout-container {
-  display: none;
   width: 464px;
   height: 492px;
   background: #000000;
@@ -203,7 +202,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
@@ -221,4 +220,27 @@ input[type=number] {
 }
 .btn:hover {
   background-color: #e63900;
+}
+
+/* thankYou msg box*/
+.msg-box {
+  height: 100px;
+  background: #ecfdf5;
+  margin: 20px 60px;
+  color: #43b02a;
+  font-size: 20px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+/* Utility */
+.orange-text {
+  color: #ff6a00;
+}
+
+.hidden {
+  display: none;
 }

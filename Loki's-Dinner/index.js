@@ -1,6 +1,8 @@
 import { menuArr } from "./data.js";
 
 const cartArr = [];
+renderItems();
+const paymentForm = document.getElementById("payment-form");
 
 document.addEventListener("click", (e) => {
   if (e.target.dataset.add) {
@@ -9,28 +11,39 @@ document.addEventListener("click", (e) => {
     removeCartItem(e.target.dataset.remove);
   } else if (e.target.id === "complete-orderBtn") {
     getPaymentForm();
-  } else if (e.target.id === "pay-btn") {
-    removePaymentForm()
   }
 });
+
+paymentForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const getFormData = new FormData(paymentForm);
+  const userName = getFormData.get("name");
+  console.log(userName)
+  document.getElementById('msg-box').classList.remove('hidden')
+  document.getElementById("msg-name").textContent = userName
+  document.getElementById("checkout-container").classList.add('hidden')
+
+
+});
+
 
 function handleAddBtnClick(cardId) {
   const targetCardObj = menuArr.filter((obj) => obj.id === Number(cardId))[0];
 
   cartArr.push(targetCardObj);
-
+  if(!document.getElementById('msg-box').classList.contains('hidden')){
+    document.getElementById('msg-box').classList.add('hidden')
+  }
   renderCart();
 }
 
 function getPaymentForm() {
-  document.getElementById("checkout-container").style.display = "block";
-  cartArr.length = 0
-  renderCart()
+  document.getElementById("checkout-container").classList.remove('hidden')
+  cartArr.length = 0;
+  renderCart();
 }
-function removePaymentForm(){
-    document.getElementById("checkout-container").style.display = "none";
 
-}
 function renderCart() {
   const cartItemsContainer = document.getElementById("cart-items");
   const totalPriceEl = document.getElementById("total-price");
@@ -81,4 +94,6 @@ function getCardsHtml(menucards) {
   return cardHtml;
 }
 
-document.getElementById("menu-cards").innerHTML = getCardsHtml(menuArr);
+function renderItems() {
+  document.getElementById("menu-cards").innerHTML = getCardsHtml(menuArr);
+}

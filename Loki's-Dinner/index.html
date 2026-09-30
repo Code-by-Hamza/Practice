@@ -1,67 +1,60 @@
 <html>
-  <head>
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cause:wght@100..900&family=Knewave&display=swap"
-      rel="stylesheet"
-    />
-    <!-- css -->
-    <link rel="stylesheet" href="index.css" />
-  </head>
 
-  <body>
-    <header>
-      <img src="images/header.png" />
-      <h2>Loki's Dinner</h2>
-      <p>The best burgers and pizzas in town.</p>
-    </header>
-    <div class="menu-cards" id="menu-cards"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cause:wght@100..900&family=Knewave&display=swap"
+    rel="stylesheet" />
+  <!-- css -->
+  <link rel="stylesheet" href="index.css" />
+</head>
 
+<body>
+  <header>
+    <img src="images/header.png" />
+    <h2>Loki's Dinner</h2>
+    <p>The best burgers and pizzas in town.</p>
+  </header>
+  <div class="menu-cards" id="menu-cards"></div>
 
-    <!-- cart -->
-    <div class="cart-items-container">
-      <h2 class="orange-text">Your Order</h2>
-      <div class="cart-items" id="cart-items">
-        <div class="container" id="single-item">
-        </div>
+  <!-- thank you for ordering -->
+  <div class="msg-box hidden" id="msg-box">
+    <span>Thanks, <span id="msg-name"></span>! Your order is on its way!</span>
+  </div>
+
+  <!-- cart -->
+  <div class="cart-items-container">
+    <h2 class="orange-text">Your Order</h2>
+    <div class="cart-items" id="cart-items">
+      <div class="container" id="single-item">
       </div>
-      <div class="priceBox container">
-        <h3>Total Price:</h3>
-        <h3 id="total-price">0$</h3>
-      </div>
-      <button class="btn" id="complete-orderBtn">Complete Order</button>
     </div>
-
-    <div class="checkout-container" id="checkout-container">
-      <h2 class="orange-text">Enter Card Details</h2>
-      <form>
-        <input type="text"
-        placeholder="Enter Your Name"
-        class="input"
-        required>
-
-        <input type="number"
-        placeholder="Enter Card Number"
-        class="input"
-        required>
-
-        <input type="number"
-        placeholder="Enter CVV"
-        class="input"
-        min="100"
-        max="999"
-        required>
-
-        <button
-        type="submit"
-        class="btn"
-        >Pay</button>
-      </form>
+    <div class="priceBox container">
+      <h3>Total Price:</h3>
+      <h3 id="total-price">0$</h3>
     </div>
+    <button class="btn" id="complete-orderBtn">Complete Order</button>
+  </div>
+
+  <div class="checkout-container hidden" id="checkout-container">
+    <h2 class="orange-text">Enter Card Details</h2>
+    <form id="payment-form">
+      <input type="text" name="name" placeholder="Enter Your Name" class="input" required>
+
+      <input type="number" name="card-num" placeholder="Enter Card Number" class="input" required>
+
+      <input type="number" name="cvv-num" placeholder="Enter CVV" class="input" min="0" max="999" required>
+
+      <button type="submit" class="btn" id="pay-btn">Pay</button>
+    </form>
+  </div>
 
 
-    <script src="index.js" type="module"></script>
-  </body>
+  <script src="index.js" type="module"></script>
+</body>
+
 </html>
