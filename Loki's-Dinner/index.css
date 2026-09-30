@@ -1,12 +1,17 @@
 html {
-  background-color: #b3b3b3;
+  background-color: #0d0d0d;
+  scrollbar-width: thin;
+  scrollbar-color: #b3b3b3 #1a1a1a;
 }
 
 body {
   margin: 0 auto;
   background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+  border: 3px solid #8b8b8b;
+  border-radius: 5px;
   max-width: 600px;
   min-width: 550px;
+  height: 135dvh;
   color: #ffffff;
   font-family: "Cause", cursive;
 }
@@ -107,8 +112,7 @@ header img {
 
 /* cart */
 .cart-items-container {
-  /*!update this*/
-  display: non;
+  display: none;
   border-radius: 20px;
   margin: 20px 65px;
   height: 250px;
@@ -132,7 +136,6 @@ header img {
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #c1c1c1 transparent;
-
 }
 
 .container {
@@ -142,18 +145,6 @@ header img {
 
 .priceBox {
   margin: 10px 20px;
-}
-.order-btn {
-  padding: 10px 60px;
-  font-weight: 900;
-  font-size: 17px;
-  background: #ff6a00;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-}
-.order-btn:hover {
-  background-color: #e63900;
 }
 
 /* Utility */
@@ -166,6 +157,68 @@ header img {
   color: #8b8b8b;
   border: none;
 }
-.remove-btn:hover, .remove-btn:focus {
+.remove-btn:hover,
+.remove-btn:focus {
   color: #e63900;
+}
+/* checkOut */
+.checkout-container {
+  display: none;
+  width: 464px;
+  height: 492px;
+  background: #000000;
+  border: 3px solid #8b8b8b;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  font-size: 20;
+  padding: 15px 10px;
+  border-radius: 10px;
+  color: #c1c1c1;
+  background: #1a1a1a;
+  border: 3px solid #8b8b8b;
+  width: 291px;
+}
+.checkout-container h2 {
+  font-size: 30;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Btn */
+.btn {
+  padding: 15px 60px;
+  font-weight: 900;
+  font-size: 17px;
+  background: #ff6a00;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #e63900;
 }
