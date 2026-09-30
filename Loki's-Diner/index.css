@@ -10,7 +10,6 @@ body {
     border-radius: 5px;
     max-width: 600px;
     min-width: 550px;
-    height: 135dvh;
     color: #ffffff;
     font-family: "Cause", cursive;
 }
@@ -78,16 +77,6 @@ header img {
 .card-price {
     font-weight: 900;
     margin: 5px 0 0 0;
-}
-
-.plus {
-    display: inline-block;
-    margin: -6px auto;
-    font-weight: 400;
-    font-size: 40;
-    cursor: pointer;
-    user-select: none;
-    color: #b3b3b3;
 }
 
 /* cart */
@@ -198,15 +187,23 @@ input[type="number"] {
 .plus-btn {
     width: 40px;
     height: 40px;
+    font-weight: 500;
+    font-size: 30px;
     border-radius: 50%;
-    border: 2px solid #2b2b2b;
+    border: 2px solid #8b8b8b;
     display: flex;
     margin-left: auto;
     margin-right: 10px;
+    cursor: pointer;
+    user-select: none;
+    color: #b3b3b3;
+    background: #1a1a1a;
 }
 
 .plus-btn:hover {
     background-color: #ff6a00;
+    border: 2px solid #e63900;
+    color: #ffffff;
 }
 
 .close-btn {

@@ -34,7 +34,7 @@ function getPaymentForm() {
 }
 
 function handleAddBtnClick(cardId) {
-    const targetCardObj = menuArr.filter((obj) => obj.id === Number(cardId))[0];
+    const targetCardObj = menuArr.find((obj) => obj.id === Number(cardId));
 
     cartArr.push(targetCardObj);
     if (!document.getElementById("msg-box").classList.contains("hidden")) {
@@ -61,16 +61,17 @@ function renderCart() {
         : (document.querySelector(".cart-items-container").style.display =
               "none");
 
-    cartItemsContainer.innerHTML = "";
+    let cartHtml = ''
     let totalPrice = 0;
     cartArr.forEach((item) => {
         totalPrice += item.price;
-        cartItemsContainer.innerHTML += `
+        cartHtml += `
       <div class="container" id="single-item">
         <h3>${item.name}<button class="remove-btn" data-remove="${item.id}">Remove</button></h3>
         <h3>${item.price}$</h3>
       </div>
     `;
+    cartItemsContainer.innerHTML = cartHtml
     });
 
     totalPriceEl.textContent = `${totalPrice}$`;
@@ -97,9 +98,7 @@ function getCardsHtml(menucards) {
                 <p class="card-recipe">${card.ingredients.join(",")}</p>
                 <p class="card-price">${card.price}$</p>
             </div>
-        <div class="plus-btn">
-            <span class="plus" data-add="${card.id}">+</span>
-        </div>
+            <button class="plus-btn" data-add="${card.id}">+</button>
     </section>`;
     });
     return cardHtml;
