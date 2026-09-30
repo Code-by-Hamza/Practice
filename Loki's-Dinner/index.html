@@ -20,7 +20,7 @@
     <div class="menu-cards" id="menu-cards"></div>
 
 
-
+    <!-- cart -->
     <div class="cart-items-container">
       <h2 class="orange-text">Your Order</h2>
       <div class="cart-items" id="cart-items">
@@ -31,8 +31,36 @@
         <h3>Total Price:</h3>
         <h3 id="total-price">0$</h3>
       </div>
-      <button class="order-btn">Complete Order</button>
+      <button class="btn" id="complete-orderBtn">Complete Order</button>
     </div>
+
+    <div class="checkout-container" id="checkout-container">
+      <h2 class="orange-text">Enter Card Details</h2>
+      <form>
+        <input type="text"
+        placeholder="Enter Your Name"
+        class="input"
+        required>
+
+        <input type="number"
+        placeholder="Enter Card Number"
+        class="input"
+        required>
+
+        <input type="number"
+        placeholder="Enter CVV"
+        class="input"
+        min="100"
+        max="999"
+        required>
+
+        <button
+        type="submit"
+        class="btn"
+        >Pay</button>
+      </form>
+    </div>
+
 
     <script src="index.js" type="module"></script>
   </body>

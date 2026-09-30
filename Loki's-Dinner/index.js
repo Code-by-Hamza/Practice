@@ -1,14 +1,19 @@
 import { menuArr } from "./data.js";
 
+const cartArr = [];
+
 document.addEventListener("click", (e) => {
   if (e.target.dataset.add) {
     handleAddBtnClick(e.target.dataset.add);
   } else if (e.target.dataset.remove) {
     removeCartItem(e.target.dataset.remove);
+  } else if (e.target.id === "complete-orderBtn") {
+    getPaymentForm();
+  } else if (e.target.id === "pay-btn") {
+    removePaymentForm()
   }
 });
 
-const cartArr = [];
 function handleAddBtnClick(cardId) {
   const targetCardObj = menuArr.filter((obj) => obj.id === Number(cardId))[0];
 
@@ -17,9 +22,23 @@ function handleAddBtnClick(cardId) {
   renderCart();
 }
 
+function getPaymentForm() {
+  document.getElementById("checkout-container").style.display = "block";
+  cartArr.length = 0
+  renderCart()
+}
+function removePaymentForm(){
+    document.getElementById("checkout-container").style.display = "none";
+
+}
 function renderCart() {
   const cartItemsContainer = document.getElementById("cart-items");
   const totalPriceEl = document.getElementById("total-price");
+
+  cartArr.length !== 0
+    ? (document.querySelector(".cart-items-container").style.display = "block")
+    : (document.querySelector(".cart-items-container").style.display = "none");
+
   cartItemsContainer.innerHTML = "";
   let totalPrice = 0;
   cartArr.forEach((item) => {
@@ -38,10 +57,10 @@ function renderCart() {
 function removeCartItem(itemId) {
   const indexTORemove = cartArr.findIndex((item) => item.id === Number(itemId));
 
-  if(indexTORemove !== -1){
-    cartArr.splice(indexTORemove, 1)
+  if (indexTORemove !== -1) {
+    cartArr.splice(indexTORemove, 1);
   }
-  renderCart()
+  renderCart();
 }
 
 function getCardsHtml(menucards) {
@@ -63,9 +82,3 @@ function getCardsHtml(menucards) {
 }
 
 document.getElementById("menu-cards").innerHTML = getCardsHtml(menuArr);
-
-// name: "Cheeseburger",
-//         ingredients: ["beef", "cheddar cheese", "pickles", "onion"],
-//         price: 10,
-//         emoji: "🧀",
-//         id: 2
