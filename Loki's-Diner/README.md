@@ -24,3 +24,9 @@ A simple diner ordering app built with HTML, CSS and JavaScript.
 - Arrays and objects
 - FormData
 - Managing state and re-rendering the UI
+
+## Screenshot
+
+| Homepage | Payment Screen |
+| :---: | :---: |
+| <img src="images/screenshot.png" width="400" /> | <img src="images/screenshot2.png" width="400" /> |
