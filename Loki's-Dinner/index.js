@@ -14,34 +14,35 @@ document.addEventListener("click", (e) => {
   }
 });
 
-paymentForm.addEventListener("submit", function(e) {
+paymentForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const getFormData = new FormData(paymentForm);
   const userName = getFormData.get("name");
-  console.log(userName)
-  document.getElementById('msg-box').classList.remove('hidden')
-  document.getElementById("msg-name").textContent = userName
-  document.getElementById("checkout-container").classList.add('hidden')
-
-
+  console.log(userName);
+  document.getElementById("msg-box").classList.remove("hidden");
+  document.getElementById("msg-name").textContent = userName;
+  document.getElementById("checkout-container").classList.add("hidden");
 });
 
+function getPaymentForm() {
+  document.getElementById("checkout-container").classList.remove("hidden");
+  cartArr.length = 0;
+  renderCart();
+}
 
 function handleAddBtnClick(cardId) {
   const targetCardObj = menuArr.filter((obj) => obj.id === Number(cardId))[0];
 
   cartArr.push(targetCardObj);
-  if(!document.getElementById('msg-box').classList.contains('hidden')){
-    document.getElementById('msg-box').classList.add('hidden')
+  if (!document.getElementById("msg-box").classList.contains("hidden")) {
+    document.getElementById("msg-box").classList.add("hidden");
   }
   renderCart();
 }
 
-function getPaymentForm() {
-  document.getElementById("checkout-container").classList.remove('hidden')
-  cartArr.length = 0;
-  renderCart();
+function renderItems() {
+  document.getElementById("menu-cards").innerHTML = getCardsHtml(menuArr);
 }
 
 function renderCart() {
@@ -92,8 +93,4 @@ function getCardsHtml(menucards) {
     </section>`;
   });
   return cardHtml;
-}
-
-function renderItems() {
-  document.getElementById("menu-cards").innerHTML = getCardsHtml(menuArr);
 }

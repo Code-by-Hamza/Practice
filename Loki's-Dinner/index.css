@@ -7,7 +7,6 @@ html {
 body {
   margin: 0 auto;
   background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
-  border: 3px solid #8b8b8b;
   border-radius: 5px;
   max-width: 600px;
   min-width: 550px;
@@ -54,7 +53,6 @@ header img {
 
 .card-section {
   background: #1a1a1a;
-  border: 3px solid #8b8b8b;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -82,16 +80,6 @@ header img {
   margin: 5px 0 0 0;
 }
 
-.plus-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid #2b2b2b;
-  display: flex;
-  margin-left: auto;
-  margin-right: 10px;
-}
-
 .plus {
   display: inline-block;
   margin: -6px auto;
@@ -102,14 +90,6 @@ header img {
   color: #b3b3b3;
 }
 
-.plus-btn:hover {
-  background-color: #ff6a00;
-}
-
-.plus-btn-click {
-  background-color: #ff6a00;
-}
-
 /* cart */
 .cart-items-container {
   display: none;
@@ -117,7 +97,6 @@ header img {
   margin: 20px 65px;
   height: 250px;
   background: #1a1a1a;
-  border: 3px solid #8b8b8b;
   text-align: center;
 }
 .cart-items-container h3 {
@@ -132,7 +111,6 @@ header img {
   margin: 0 20px;
   border-radius: 5px;
   padding: 7px;
-  border: 3px solid #8b8b8b;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #c1c1c1 transparent;
@@ -147,7 +125,6 @@ header img {
   margin: 10px 20px;
 }
 
-
 .remove-btn {
   background: transparent;
   font-weight: 600;
@@ -159,14 +136,11 @@ header img {
   color: #e63900;
 }
 
-
-
 /* checkOut */
 .checkout-container {
   width: 464px;
   height: 492px;
   background: #000000;
-  border: 3px solid #8b8b8b;
   border-radius: 10px;
   position: fixed;
   top: 50%;
@@ -190,7 +164,6 @@ form {
   border-radius: 10px;
   color: #c1c1c1;
   background: #1a1a1a;
-  border: 3px solid #8b8b8b;
   width: 291px;
 }
 .checkout-container h2 {
@@ -207,7 +180,7 @@ input[type="number"] {
   appearance: textfield;
 }
 
-/* Btn */
+/* Btns */
 .btn {
   padding: 15px 60px;
   font-weight: 900;
@@ -220,6 +193,20 @@ input[type="number"] {
 }
 .btn:hover {
   background-color: #e63900;
+}
+
+.plus-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #2b2b2b;
+  display: flex;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.plus-btn:hover  {
+  background-color: #ff6a00;
 }
 
 /* thankYou msg box*/
@@ -240,7 +227,15 @@ input[type="number"] {
 .orange-text {
   color: #ff6a00;
 }
-
 .hidden {
   display: none;
+}
+
+.input,
+.checkout-container,
+.cart-items,
+.cart-items-container,
+.card-section,
+body {
+  border: 3px solid #8b8b8b;
 }
