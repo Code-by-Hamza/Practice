@@ -3,6 +3,8 @@ import { menuArr } from "./data.js";
 document.addEventListener("click", (e) => {
   if (e.target.dataset.add) {
     handleAddBtnClick(e.target.dataset.add);
+  } else if (e.target.dataset.remove) {
+    removeCartItem(e.target.dataset.remove);
   }
 });
 
@@ -24,13 +26,22 @@ function renderCart() {
     totalPrice += item.price;
     cartItemsContainer.innerHTML += `
       <div class="container" id="single-item">
-        <h3>${item.name}</h3>
+        <h3>${item.name}<button class="remove-btn" data-remove="${item.id}">Remove</button></h3>
         <h3>${item.price}$</h3>
       </div>
     `;
   });
 
   totalPriceEl.textContent = `${totalPrice}$`;
+}
+
+function removeCartItem(itemId) {
+  const indexTORemove = cartArr.findIndex((item) => item.id === Number(itemId));
+
+  if(indexTORemove !== -1){
+    cartArr.splice(indexTORemove, 1)
+  }
+  renderCart()
 }
 
 function getCardsHtml(menucards) {

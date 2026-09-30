@@ -160,3 +160,12 @@ header img {
 .orange-text {
   color: #ff6a00;
 }
+.remove-btn {
+  background: transparent;
+  font-weight: 600;
+  color: #8b8b8b;
+  border: none;
+}
+.remove-btn:hover, .remove-btn:focus {
+  color: #e63900;
+}
