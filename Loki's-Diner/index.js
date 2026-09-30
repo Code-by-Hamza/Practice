@@ -11,6 +11,8 @@ document.addEventListener("click", (e) => {
         removeCartItem(e.target.dataset.remove);
     } else if (e.target.id === "complete-orderBtn") {
         getPaymentForm();
+    } else if (e.target.id === "close-btn") {
+        handleCloseBtn();
     }
 });
 
@@ -23,12 +25,12 @@ paymentForm.addEventListener("submit", function (e) {
     document.getElementById("msg-box").classList.remove("hidden");
     document.getElementById("msg-name").textContent = userName;
     document.getElementById("checkout-container").classList.add("hidden");
+    cartArr.length = 0;
+    renderCart();
 });
 
 function getPaymentForm() {
     document.getElementById("checkout-container").classList.remove("hidden");
-    cartArr.length = 0;
-    renderCart();
 }
 
 function handleAddBtnClick(cardId) {
@@ -39,6 +41,10 @@ function handleAddBtnClick(cardId) {
         document.getElementById("msg-box").classList.add("hidden");
     }
     renderCart();
+}
+
+function handleCloseBtn() {
+    document.getElementById("checkout-container").classList.add("hidden");
 }
 
 function renderItems() {

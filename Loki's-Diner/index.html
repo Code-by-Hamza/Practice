@@ -20,62 +20,67 @@
             <h2>Loki's Dinner</h2>
             <p>The best burgers and pizzas in town.</p>
         </header>
-        <div class="menu-cards" id="menu-cards"></div>
+        <main>
+            <div class="menu-cards" id="menu-cards"></div>
 
-        <!-- thank you for ordering -->
-        <div class="msg-box hidden" id="msg-box">
-            <span
-                >Thanks, <span id="msg-name"></span>! Your order is on its
-                way!</span
-            >
-        </div>
-
-        <!-- cart -->
-        <div class="cart-items-container">
-            <h2 class="orange-text">Your Order</h2>
-            <div class="cart-items" id="cart-items">
-                <div class="container" id="single-item"></div>
+            <!-- thank you for ordering -->
+            <div class="msg-box hidden" id="msg-box">
+                <span
+                    >Thanks, <span id="msg-name"></span>! Your order is on its
+                    way!</span
+                >
             </div>
-            <div class="priceBox container">
-                <h3>Total Price:</h3>
-                <h3 id="total-price">0$</h3>
+
+            <!-- cart -->
+            <div class="cart-items-container">
+                <h2 class="orange-text">Your Order</h2>
+                <div class="cart-items" id="cart-items">
+                    <div class="container" id="single-item"></div>
+                </div>
+                <div class="priceBox container">
+                    <h3>Total Price:</h3>
+                    <h3 id="total-price">0$</h3>
+                </div>
+                <button class="btn" id="complete-orderBtn">
+                    Complete Order
+                </button>
             </div>
-            <button class="btn" id="complete-orderBtn">Complete Order</button>
-        </div>
-        <!-- checkout -->
-        <div class="checkout-container hidden" id="checkout-container">
-            <h2 class="orange-text">Enter Card Details</h2>
-            <form id="payment-form">
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Enter Your Name"
-                    class="input"
-                    required
-                />
+            <!-- checkout -->
 
-                <input
-                    type="number"
-                    name="card-num"
-                    placeholder="Enter Card Number"
-                    class="input"
-                    required
-                />
+            <div class="checkout-container hidden" id="checkout-container">
+                <h2 class="orange-text">Enter Card Details</h2>
+                <button class="close-btn" id="close-btn">X</button>
+                <form id="payment-form">
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter Your Name"
+                        class="input"
+                        required
+                    />
 
-                <input
-                    type="number"
-                    name="cvv-num"
-                    placeholder="Enter CVV"
-                    class="input"
-                    min="0"
-                    max="999"
-                    required
-                />
+                    <input
+                        type="number"
+                        name="card-num"
+                        placeholder="Enter Card Number"
+                        class="input"
+                        required
+                    />
 
-                <button type="submit" class="btn" id="pay-btn">Pay</button>
-            </form>
-        </div>
+                    <input
+                        type="number"
+                        name="cvv-num"
+                        placeholder="Enter CVV"
+                        class="input"
+                        min="0"
+                        max="999"
+                        required
+                    />
 
+                    <button type="submit" class="btn" id="pay-btn">Pay</button>
+                </form>
+            </div>
+        </main>
         <script src="index.js" type="module"></script>
     </body>
 </html>
