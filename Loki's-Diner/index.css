@@ -209,6 +209,24 @@ input[type="number"] {
     background-color: #ff6a00;
 }
 
+.close-btn {
+    padding: 5px 9px;
+    border-radius: 50%;
+    background: transparent;
+    color: #c1c1c1;
+    font-size: 18px;
+    font-weight: 900;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+
+.close-btn:hover {
+    color: #e63900;
+    border: 3px solid #e63900;
+}
+
 /* thankYou msg box*/
 .msg-box {
     height: 100px;
@@ -236,6 +254,7 @@ input[type="number"] {
 .cart-items,
 .cart-items-container,
 .card-section,
+.close-btn,
 body {
     border: 3px solid #8b8b8b;
 }
