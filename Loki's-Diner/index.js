@@ -53,9 +53,10 @@ function renderItems() {
 function renderCart() {
     const cartItemsContainer = document.getElementById("cart-items");
     const totalPriceEl = document.getElementById("total-price");
-    const cartContainer = document.querySelector(".cart-item-container");
+    const cartContainer = document.querySelector(".cart-items-container");
 
-    cartContainer.classList.toggle("hidden", cartArr.length === 0);
+    cartArr.length === 0 ? cartContainer.classList.add('hidden')
+    : cartContainer.classList.remove('hidden')
 
     let totalPrice = 0;
     const cartHtml = cartArr
