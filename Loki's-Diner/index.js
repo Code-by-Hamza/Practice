@@ -53,26 +53,23 @@ function renderItems() {
 function renderCart() {
     const cartItemsContainer = document.getElementById("cart-items");
     const totalPriceEl = document.getElementById("total-price");
+    const cartContainer = document.querySelector(".cart-item-container");
 
-    cartArr.length !== 0
-        ? (document.querySelector(".cart-items-container").style.display =
-              "block")
-        : (document.querySelector(".cart-items-container").style.display =
-              "none");
+    cartContainer.classList.toggle("hidden", cartArr.length === 0);
 
-    let cartHtml = "";
     let totalPrice = 0;
-    cartArr.forEach((item) => {
-        totalPrice += item.price;
-        cartHtml += `
-      <div class="container">
+    const cartHtml = cartArr
+        .map((item) => {
+            totalPrice += item.price;
+            return `<div class="container">
         <h3>${item.name}<button class="remove-btn" data-remove="${item.id}">Remove</button></h3>
         <h3>${item.price}$</h3>
       </div>
     `;
-        cartItemsContainer.innerHTML = cartHtml;
-    });
+        })
+        .join("");
 
+    cartItemsContainer.innerHTML = cartHtml;
     totalPriceEl.textContent = `${totalPrice}$`;
 }
 
