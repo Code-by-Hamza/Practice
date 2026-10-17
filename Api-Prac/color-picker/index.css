@@ -49,19 +49,32 @@ button {
     border-radius: 5px;
     border: none;
     padding: 0.8125rem 0.6875rem;
-    transition: .5s;
+    transition: 0.5s;
+    transition: transform 0.1s ease;
 }
 button:hover {
-     background-color:  #1a2029;
-     transition: transform .5s;
+    background-color: #1a2029;
+    transform: scale(1.02);
 }
 
 .color-container {
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    background-color: #3d4b60;
+    text-align: center;
+    align-items: stretch;
+    height: calc(100vh - 112px);
+    background-color: #1f2937;
 }
 .color {
-    width: 110px;
+    flex: 1;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+    
+}
+.single-color {
+    background-color: #1a2029;
+    padding: 12px 0;
+    color: #D5D4D8;
 }

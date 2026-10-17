@@ -18,7 +18,14 @@ function getColors(url) {
             const colorsArr = data.colors
             
             const hexValues = colorsArr.map(color => color?.hex?.value)
-            console.log(hexValues)
+            renderColors(hexValues)
         })
     
+}
+function renderColors(hexArr){
+    let html = ''
+    for (let i=0; i<hexArr.length; i++){
+        html += `<div style="background-color: ${hexArr[i]};" class="color"><span class="single-color">${hexArr[i]}</span></div>`
+    }
+    document.getElementById('color-container').innerHTML = html
 }
