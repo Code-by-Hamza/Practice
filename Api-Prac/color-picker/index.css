@@ -78,3 +78,8 @@ button:hover {
     padding: 12px 0;
     color: #D5D4D8;
 }
+.error {
+    color: red;
+    margin: 0 auto;
+    padding-top: 50px;
+}

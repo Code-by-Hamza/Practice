@@ -13,13 +13,22 @@ inputForm.addEventListener("submit", (e) => {
 
 function getColors(url) {
     fetch(url)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error("Failed to fetch color scheme");
+            }
+            return res.json();
+        })
         .then(data => {
             const colorsArr = data.colors
             
             const hexValues = colorsArr.map(color => color?.hex?.value)
             renderColors(hexValues)
         })
+        .catch(err => {
+            console.error("Error:", err);
+            document.getElementById('color-container').innerHTML = `<h2 class="error">Opps! Looks like the server is down.</h2>`
+        });
     
 }
 function renderColors(hexArr){
