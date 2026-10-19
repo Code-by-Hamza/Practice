@@ -18,7 +18,8 @@ header div {
 }
 
 header h1 {
-    font-size: 2.825rem;
+    font-size: 2.625rem;
+    font-weight: 800;
 }
 
 a {
@@ -67,8 +68,23 @@ input {
     width: 100%;
     color: #ffffff;
 }
+input::placeholder{
+    color: #A5A5A5;
+}
 .fa-magnifying-glass {
     margin: auto;
     padding-left: 15px ;
-    color: #5d5d5d;
+    color: #A5A5A5;
+}
+.empty-feed{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50%;
+}
+.empty-feed span {
+    color: #2E2E2F;
+    font-weight: bold;
+    margin-top: 5px;
 }
