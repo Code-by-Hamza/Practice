@@ -115,12 +115,21 @@ main {
 }
 
 .empty-feed {
+    margin: 5rem 0;
+}
+
+.empty-feed, .error {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5rem 0;
     opacity: 0.5;
+}
+
+.error {
+    font-size: 1.125rem;
+    color: #a5a5a5;
+    padding: 0 1.25rem;
 }
 
 .empty-feed span {
