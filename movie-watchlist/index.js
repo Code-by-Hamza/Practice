@@ -12,17 +12,16 @@ searchForm.addEventListener("submit", async (e) => {
     if (!query) return;
 
     try {
-        const res = await fetch(`${API_KEY}&s=${query}`);
+        const res = await fetch(`${API_KEY}&s=${encodeURIComponent(query)}`);
         const data = await res.json();
 
         if (data.Response === "False") {
             mainFeed.innerHTML = `
-                <div class="empty-feed">
-                    <span>Unable to find what you’re looking for. Please try another search.</span>
+                <div class="error">
+                    <h2>Unable to find what you’re looking for. Please try another search.</h2>
                 </div>`;
             return;
         }
-
 
         const detailedMoviePromises = data.Search.map(async (movie) => {
             const detailRes = await fetch(`${API_KEY}&i=${movie.imdbID}`);
@@ -31,7 +30,6 @@ searchForm.addEventListener("submit", async (e) => {
 
         const movies = await Promise.all(detailedMoviePromises);
         renderFeed(movies);
-
     } catch (error) {
         console.error("Error fetching movies:", error);
     }
@@ -42,6 +40,7 @@ function renderFeed(movies) {
     movies.forEach((movie) => {
         const poster = movie.Poster !== "N/A" ? movie.Poster : "./img/Icon.png";
         const rating = movie.imdbRating !== "N/A" ? movie.imdbRating : "N/A";
+        const isAlreadyAdded = watchlist.includes(movie.imdbID);
 
         html += `
         <article class="card">
@@ -55,8 +54,11 @@ function renderFeed(movies) {
                     <span>${movie.Runtime}</span>
                     <span>${movie.Genre}</span>
                     <button class="watchlist-btn" type="button" data-id="${movie.imdbID}">
-                        <i class="fa-solid fa-circle-plus"></i>
-                        <span>Watchlist</span>
+                        ${
+                            isAlreadyAdded
+                                ? `<i class="fa-solid fa-check" style="color: #00e5ff;"></i> <span>Added</span>`
+                                : `<i class="fa-solid fa-circle-plus"></i> <span>Watchlist</span>`
+                        }
                     </button>
                 </div>
                 <p class="description">${movie.Plot}</p>
@@ -69,7 +71,7 @@ function renderFeed(movies) {
 mainFeed.addEventListener("click", (e) => {
     const btn = e.target.closest(".watchlist-btn");
     if (!btn) return;
-    
+
     const movieId = btn.dataset.id;
     if (!watchlist.includes(movieId)) {
         watchlist.push(movieId);

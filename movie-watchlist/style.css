@@ -118,7 +118,8 @@ main {
     margin: 5rem 0;
 }
 
-.empty-feed, .error {
+.empty-feed,
+.error {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -130,6 +131,7 @@ main {
     font-size: 1.125rem;
     color: #a5a5a5;
     padding: 0 1.25rem;
+    text-align: center;
 }
 
 .empty-feed span {
@@ -185,7 +187,8 @@ main {
     color: #ffffff;
 }
 
-.watchlist-btn {
+.watchlist-btn,
+.remove-btn {
     display: flex;
     align-items: center;
     gap: 0.3rem;
@@ -200,6 +203,10 @@ main {
 
 .watchlist-btn:hover {
     color: #00e5ff;
+}
+
+.remove-btn:hover {
+    color: #ff4d4d;
 }
 
 .description {
