@@ -1,90 +1,201 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
-    max-width: 550px;
     background-color: #121212;
     color: #ffffff;
     font-family: "Inter", sans-serif;
-}
-header {
-    height: 13rem;
-    background: url("./img/header.png");
-}
-header div {
     display: flex;
-    justify-content: space-between;
-    padding: 40px 16px 8px;
+    justify-content: center;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 550px;
+    min-height: 100vh;
+    background-color: #1c1c1c;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+header {
+    height: 12rem;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+        url("./img/header.png") center/cover no-repeat;
+    display: flex;
     align-items: center;
 }
 
-header h1 {
-    font-size: 2.625rem;
-    font-weight: 800;
+.header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
 }
 
-a {
-    background: transparent;
-    color: #ffffff;
-    border: none;
-    font-weight: bold;
-    text-decoration: none;
+header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
 }
-a:hover {
-    color: aqua;
+
+.nav-link {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #00e5ff;
+}
+
+/* Search Bar */
+main {
+    padding: 0 1.5rem 2rem;
 }
 
 .search-bar {
     display: flex;
-    width: 462px;
-    height: 38px;
+    align-items: center;
     background-color: #2e2e2f;
     border-radius: 6px;
-    margin: -19px auto;
+    margin-top: -20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.search-bar input,
-.btn {
+.search-icon {
+    padding-left: 1rem;
+    color: #a5a5a5;
+}
+
+.search-bar input {
+    flex: 1;
     background: transparent;
     border: none;
-}
-.btn {
+    padding: 0.75rem;
     color: #ffffff;
-    padding: 10px;
+    font-size: 0.9rem;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-bar input::placeholder {
+    color: #a5a5a5;
+}
+
+.btn {
     background-color: #4b4b4b;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.25rem;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
-    width: 120px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
-.btn:hover{
-    color: aqua;
+
+.btn:hover {
+    background-color: #00e5ff;
+    color: #121212;
 }
-input:focus {
-    outline: none;
-    box-shadow: none;
-    color: #ffffff;
+
+/* Feed & Empty State */
+#feed {
+    margin-top: 2rem;
 }
-input {
-    padding-left: 10px;
-    width: 100%;
-    color: #ffffff;
-}
-input::placeholder{
-    color: #A5A5A5;
-}
-.fa-magnifying-glass {
-    margin: auto;
-    padding-left: 15px ;
-    color: #A5A5A5;
-}
-.empty-feed{
+
+.empty-feed {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50%;
+    margin: 5rem 0;
+    opacity: 0.5;
 }
+
 .empty-feed span {
-    color: #2E2E2F;
-    font-weight: bold;
-    margin-top: 5px;
+    color: #a5a5a5;
+    font-weight: 600;
+    margin-top: 0.75rem;
+}
+
+/* Card Styling */
+.card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1.5px solid #2e2e2f;
+}
+
+.poster {
+    width: 100px;
+    height: 148px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-header h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.rating {
+    font-size: 0.8rem;
+    color: #ffffff;
+}
+
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    color: #ffffff;
+}
+
+.watchlist-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.watchlist-btn:hover {
+    color: #00e5ff;
+}
+
+.description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #a5a5a5;
+    margin: 0;
 }

@@ -1,39 +1,88 @@
-<html>
+<!doctype html>
+<html lang="en">
     <head>
-        <!-- fonts -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Movie Watchlist</title>
+        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
             rel="stylesheet"
         />
-        <!-- css -->
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <header>
-            <div>
-                <h1>Find your film</h1>
-                <a href="watchlist.html">My Watchlist</a>
-            </div>
-        </header>
-        <main>
-            <div class="search-bar">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Blade Runner" />
-                <button class="btn">Search</button>
-            </div>
-            <section id="feed">
-                <div class="empty-feed">
-                    <img src="./img/Icon.png">
-                    <span>Start Exploring</span>
-                </div>
-            </section>
-        </main>
+        <!-- Font Awesome -->
         <script
             src="https://kit.fontawesome.com/152f769850.js"
             crossorigin="anonymous"
         ></script>
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="app-container">
+            <header>
+                <div class="header-content">
+                    <h1>Find your film</h1>
+                    <a href="watchlist.html" class="nav-link">My Watchlist</a>
+                </div>
+            </header>
+
+            <main>
+                <!-- Search Form -->
+                <form id="search-form" class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Blade Runner"
+                        name="search"
+                        required
+                    />
+                    <button type="submit" class="btn">Search</button>
+                </form>
+
+                <!--Content Feed -->
+                <section id="feed">
+                    <!-- Empty State -->
+                    <div class="empty-feed">
+                        <img src="./img/Icon.png" alt="Film reel icon" />
+                        <span>Start Exploring</span>
+                    </div>
+
+                    <!-- Movie Card -->
+                    <article class="card">
+                        <img
+                            src="./img/image.png"
+                            alt="Blade Runner Poster"
+                            class="poster"
+                        />
+                        <div class="card-details">
+                            <div class="card-header">
+                                <h2>Blade Runner</h2>
+                                <span class="rating">⭐ 8.1</span>
+                            </div>
+
+                            <div class="card-meta">
+                                <span>116 min</span>
+                                <span>Drama, Mystery, Sci-Fi</span>
+                                <button class="watchlist-btn" type="button">
+                                    <i class="fa-solid fa-circle-plus"></i>
+                                    <span>Watchlist</span>
+                                </button>
+                            </div>
+
+                            <p class="description">
+                                A blade runner must pursue and terminate four
+                                replicants who stole a ship in space, and have
+                                returned to Earth to find their creator.
+                            </p>
+                        </div>
+                    </article>
+                </section>
+            </main>
+        </div>
+
         <script src="index.js" type="module"></script>
     </body>
 </html>
