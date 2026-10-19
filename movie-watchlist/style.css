@@ -13,8 +13,8 @@ header {
 header div {
     display: flex;
     justify-content: space-between;
+    padding: 40px 16px 8px;
     align-items: center;
-    padding: 8px 16px;
 }
 
 header h1 {
@@ -54,6 +54,9 @@ a:hover {
     border-bottom-right-radius: 6px;
     width: 120px;
 }
+.btn:hover{
+    color: aqua;
+}
 input:focus {
     outline: none;
     box-shadow: none;
@@ -62,6 +65,7 @@ input:focus {
 input {
     padding-left: 10px;
     width: 100%;
+    color: #ffffff;
 }
 .fa-magnifying-glass {
     margin: auto;
